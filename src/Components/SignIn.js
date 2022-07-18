@@ -17,20 +17,23 @@ export default function SignIn() {
   }
 
   return (
-    <form onSubmit={handleSignIn}>
-      Sign In
-      <label>
-        Email
-        <input value={signInEmail}
-          onChange={(e) => setSignInEmail(e.target.value)}/>
-      </label>
-      <label>
-        Password
-        <input value={signInPassword} 
-          type="password"
-          onChange={(e) => setSignInPassword(e.target.value)}/>
-      </label>
-      <button>Sign In</button>
-    </form>
+    <div className='auth-form'>
+      <form onSubmit={handleSignIn}>
+        <label>
+          <input 
+            placeholder='Email'
+            value={signInEmail}
+            onChange={(e) => setSignInEmail(e.target.value)}/>
+        </label>
+        <label>
+          <input value={signInPassword} 
+            placeholder='Password'
+            type='password'
+            onChange={(e) => setSignInPassword(e.target.value)}/>
+        </label>
+        <button>Login</button>
+        <p>Don't have an account? <a href='./sign-up'>Sign up</a></p> {/*eslint-disable-line */}
+      </form>
+    </div>
   );
 }

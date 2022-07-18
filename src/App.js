@@ -80,7 +80,6 @@ function App() {
               <li>
                 <Link to="/liked-animals">My Liked Animals</Link>
               </li>
-              <button>logout</button>
             </ul>
           </nav>
         </footer>
