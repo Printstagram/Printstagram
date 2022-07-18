@@ -4,6 +4,7 @@ import {
   Route,
   Link
 } from 'react-router-dom';
+import { useDataContext } from './DataProvider';
 
 import './App.css';
 import About from './Components/About';
@@ -13,8 +14,17 @@ import LikedList from './Components/LikedList';
 import SearchAnimalsList from './Components/SearchAnimalsList';
 import SignIn from './Components/SignIn';
 import SignUp from './Components/SignUp';
-
+import { logout } from './services/fetch-utils';
 function App() {
+
+  // const {
+
+  // } = useDataContext();
+
+  async function handleLogout() {
+    await logout();
+  }
+
   return (
     <Router>
       <div>
@@ -30,7 +40,7 @@ function App() {
               <li>
                 <Link to="/liked-animals">My Liked Animals</Link>
               </li>
-              <button>logout</button>
+              <button onClick={handleLogout}>logout</button>
             </ul>
           </nav>
         </header>
@@ -39,16 +49,22 @@ function App() {
         {/* A <Switch> looks through its children <Route>s and
           renders the first one that matches the current URL. */}
         <Switch>
-          <Route path="/">
+          <Route exact path="/">
             <AnimalsList />
           </Route>
-          <Route path="/about">
+          <Route exact path="/sign-up">
+            <SignUp />
+          </Route>
+          <Route exact path="/sign-in">
+            <SignIn />
+          </Route>
+          <Route exact path="/about">
             <About />
           </Route>
-          <Route path="/liked-animals">
+          <Route exact path="/liked-animals">
             <LikedList />
           </Route>
-          <Route path="/search-animals">
+          <Route exact path="/search-animals">
             <SearchAnimalsList />
           </Route>
         </Switch>
