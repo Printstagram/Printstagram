@@ -10,6 +10,7 @@ const headers = {
 
 exports.handler = async (event, context) => {
   try {
+    //put supersweet endpoint here
     const response = await fetch('https://cat-fact.herokuapp.com/facts');
     const data = await response.json();
     const json = JSON.stringify(data);
