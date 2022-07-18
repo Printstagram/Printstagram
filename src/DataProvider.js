@@ -5,13 +5,13 @@ const DataContext = createContext();
 
 export default function DataProvider({ children }) {
     //set state
-  const [user, setUser] = useState(getUser());
+  // const [user, setUser] = useState(getUser());
   const [animals, setAnimals] = useState([]);
   const [likedAnimals, setLikedAnimals] = useState('');
   //add url state here?
 
   const stateAndSetters = {
-    user, setUser,
+    // user, setUser,
     animals, setAnimals,
     likedAnimals, setLikedAnimals,
     //add more function stuff here
