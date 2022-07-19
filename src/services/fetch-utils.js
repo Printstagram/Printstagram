@@ -28,7 +28,7 @@ export async function fetchBearerToken() {
   const response = await fetch('/.netlify/functions/token');
 
   const data = await response.json();
-  console.log(data);
+  // console.log(data);
   return data;
 }
 

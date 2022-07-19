@@ -8,7 +8,7 @@ const headers = {
 };
 
 
-exports.handler = async (event, context) => {
+exports.handler = async () => {
   try {
     //put supersweet endpoint here
     const response = await fetch('https://api.petfinder.com/v2/oauth2/token', {
@@ -19,7 +19,6 @@ exports.handler = async (event, context) => {
       body: `grant_type=client_credentials&client_id=${process.env.API_KEY}&client_secret=${process.env.API_SECRET}`, 
     });
     const data = await response.json();
-    console.log(data);
     const json = JSON.stringify(data); 
 
     

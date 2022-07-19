@@ -16,7 +16,7 @@ exports.handler = async (event,) => {
         Authorization: `Bearer ${event.queryStringParameters.token}`,
       }
     });
-    console.log(event.queryStringParameters.token);
+    // console.log(event.queryStringParameters.token);
     const data = await response.json();
     const json = JSON.stringify(data);
     
@@ -26,7 +26,7 @@ exports.handler = async (event,) => {
       body: json
     };
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     return {
       statusCode: 500,
       body: JSON.stringify({ error: 'Failed fetching data' }),
