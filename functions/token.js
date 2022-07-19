@@ -11,9 +11,17 @@ const headers = {
 exports.handler = async (event, context) => {
   try {
     //put supersweet endpoint here
-    const response = await fetch('https://cat-fact.herokuapp.com/facts');
+    const response = await fetch('https://api.petfinder.com/v2/oauth2/token', {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/x-www-form-urlencoded'
+      },
+      body: `grant_type=client_credentials&client_id=${process.env.API_KEY}&client_secret=${process.env.API_SECRET}`, 
+    });
     const data = await response.json();
-    const json = JSON.stringify(data);
+    console.log(data);
+    const json = JSON.stringify(data); 
+
     
     return { 
       statusCode: 200, 

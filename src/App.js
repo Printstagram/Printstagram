@@ -2,7 +2,8 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link, 
+  Redirect
 } from 'react-router-dom';
 import { useDataContext } from './DataProvider';
 
@@ -15,11 +16,12 @@ import SearchAnimalsList from './Components/SearchAnimalsList';
 import SignIn from './Components/SignIn';
 import SignUp from './Components/SignUp';
 import { logout } from './services/fetch-utils';
+
 function App() {
 
-  // const {
-
-  // } = useDataContext();
+  const {
+    user, 
+  } = useDataContext();
 
   async function handleLogout() {
     await logout();
@@ -30,18 +32,20 @@ function App() {
       <div>
         <header>
           <nav>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/about">About</Link>
-              </li>
-              <li>
-                <Link to="/liked-animals">My Liked Animals</Link>
-              </li>
-              <button onClick={handleLogout}>logout</button>
-            </ul>
+            {user &&
+              <ul>
+                <li>
+                  <Link to="/">Home</Link>
+                </li>
+                <li>
+                  <Link to="/about">About</Link>
+                </li>
+                <li>
+                  <Link to="/liked-animals">My Liked Animals</Link>
+                </li>
+                <button onClick={handleLogout}>logout</button>
+              </ul>
+            }
           </nav>
         </header>
         
@@ -49,23 +53,43 @@ function App() {
         {/* A <Switch> looks through its children <Route>s and
           renders the first one that matches the current URL. */}
         <Switch>
-          <Route exact path="/">
-            <AnimalsList />
+          <Route exact path="/sign-in">
+            {
+              user
+                ? <Redirect to='/' />
+                : <SignIn />
+            }
           </Route>
           <Route exact path="/sign-up">
-            <SignUp />
+            {
+              user
+                ? <Redirect to='/' />
+                : <SignUp />
+            }
           </Route>
-          <Route exact path="/sign-in">
-            <SignIn />
+          <Route exact path="/">
+            {
+              !user
+                ? <Redirect to='/sign-in' />
+                : <AnimalsList />
+            }
+          </Route>
+          <Route exact path="/liked-animals">
+            {
+              !user
+                ? <Redirect to='/sign-in' />
+                : <LikedList />
+            }
+          </Route>
+          <Route exact path="/search-animals">
+            {
+              !user
+                ? <Redirect to='/sign-in' />
+                : <SearchAnimalsList />
+            }
           </Route>
           <Route exact path="/about">
             <About />
-          </Route>
-          <Route exact path="/liked-animals">
-            <LikedList />
-          </Route>
-          <Route exact path="/search-animals">
-            <SearchAnimalsList />
           </Route>
         </Switch>
         <footer>

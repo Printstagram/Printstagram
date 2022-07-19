@@ -8,10 +8,15 @@ const headers = {
 };
 
 
-exports.handler = async (event, context) => {
+exports.handler = async (event,) => {
   try {
     //put supersweet endpoint here
-    const response = await fetch('https://cat-fact.herokuapp.com/facts');
+    const response = await fetch(`https://api.petfinder.com/v2/animals?type=${event.queryStringParameters.type}`, {
+      headers: {
+        Authorization: `Bearer ${event.queryStringParameters.token}`,
+      }
+    });
+    console.log(event.queryStringParameters.token);
     const data = await response.json();
     const json = JSON.stringify(data);
     

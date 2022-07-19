@@ -22,3 +22,17 @@ export function getUser() {
   return client.auth.user();
 }
   
+
+// Netlify fetches
+export async function fetchBearerToken() {
+  const response = await fetch('/.netlify/functions/token');
+
+  const data = await response.json();
+  console.log(data);
+  return data;
+}
+
+export async function fetchAllAnimals(token) {
+  const response = await fetch(`/.netlify/functions/petfinder?token=${token}&type=dog`);
+  console.log(response);
+}
