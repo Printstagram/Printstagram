@@ -8,6 +8,7 @@ export default function DataProvider({ children }) {
   const [animals, setAnimals] = useState([]);
   const [likedAnimals, setLikedAnimals] = useState('');
   const [token, setToken] = useState('');
+  const [loading, setLoading] = useState(false);
   
   //add url state here?
 
@@ -15,20 +16,29 @@ export default function DataProvider({ children }) {
     user, setUser,
     animals, setAnimals,
     likedAnimals, setLikedAnimals,
-    token,
+    token, getAnimals,
     //add more function stuff here
   };
   
   useEffect(() => {
-    const fetchdata = async () => {
+    const fetchData = async () => {
+      setLoading(true);
       const data = await fetchBearerToken();
       setToken(data.access_token);
-      await fetchAllAnimals(data.access_token);
+      const resp = await fetchAllAnimals(data.access_token);
+      setLoading(false);
+      setAnimals(resp);
     };
-    fetchdata(); 
+    fetchData(); 
   }, []);
 
   //functions here?
+
+  async function getAnimals(token) {
+    const animals = await fetchAllAnimals(token);
+    console.log('animals', animals);
+    setAnimals(animals);
+  }
 
   return <DataContext.Provider value={stateAndSetters}>
     {children}

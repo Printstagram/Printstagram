@@ -33,6 +33,8 @@ export async function fetchBearerToken() {
 }
 
 export async function fetchAllAnimals(token) {
+  console.log('token', token);
   const response = await fetch(`/.netlify/functions/petfinder?token=${token}&type=dog`);
+  console.log('response', response);
   return response;
 }
