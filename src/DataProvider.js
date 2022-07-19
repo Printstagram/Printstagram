@@ -19,7 +19,7 @@ export default function DataProvider({ children }) {
     likedAnimals,
     setLikedAnimals,
     token,
-    getAnimals,
+    // handleGetAnimalsByType,
     //add more function stuff here
   };
 
@@ -36,11 +36,11 @@ export default function DataProvider({ children }) {
 
   //functions here?
 
-  async function getAnimals(token) {
-    const animals = await fetchAllAnimals(token);
-    console.log('animals', animals);
-    setAnimals(animals);
-  }
+  // async function handleGetAnimalsByType(token) {
+  //   const animals = await fetchAllAnimals(token);
+  //   console.log('animals', animals);
+  //   setAnimals(animals);
+  // }
 
   return <DataContext.Provider value={stateAndSetters}>{children}</DataContext.Provider>;
 }
