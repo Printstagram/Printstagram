@@ -61,7 +61,7 @@ function App() {
             {
               !user
                 ? <Redirect to='/sign-in' />
-                : <AnimalsList />
+                : <SearchAnimalsList />
             }
           </Route>
           <Route exact path="/liked-animals">

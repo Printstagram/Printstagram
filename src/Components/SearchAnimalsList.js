@@ -6,7 +6,7 @@ import AnimalsList from './AnimalsList';
 export default function SearchAnimalsList() {
   const { animals, getAnimals } = useDataContext();
   // const [typeQuery] = useState('dog');
-
+  console.log(animals);
   return (
     <div>
       <AnimalsList animals={animals} getAnimals={getAnimals} />

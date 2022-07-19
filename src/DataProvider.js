@@ -3,33 +3,35 @@ import { getUser, fetchBearerToken, fetchAllAnimals } from './services/fetch-uti
 const DataContext = createContext();
 
 export default function DataProvider({ children }) {
-    //set state
+  //set state
   const [user, setUser] = useState(getUser());
   const [animals, setAnimals] = useState([]);
   const [likedAnimals, setLikedAnimals] = useState('');
   const [token, setToken] = useState('');
-  const [loading, setLoading] = useState(false);
-  
+
   //add url state here?
 
   const stateAndSetters = {
-    user, setUser,
-    animals, setAnimals,
-    likedAnimals, setLikedAnimals,
-    token, getAnimals,
+    user,
+    setUser,
+    animals,
+    setAnimals,
+    likedAnimals,
+    setLikedAnimals,
+    token,
+    getAnimals,
     //add more function stuff here
   };
-  
+
   useEffect(() => {
     const fetchData = async () => {
-      setLoading(true);
       const data = await fetchBearerToken();
       setToken(data.access_token);
-      const resp = await fetchAllAnimals(data.access_token);
-      setLoading(false);
-      setAnimals(resp);
+      const { animals } = await fetchAllAnimals(data.access_token);
+      console.log(animals);
+      setAnimals(animals);
     };
-    fetchData(); 
+    fetchData();
   }, []);
 
   //functions here?
@@ -40,11 +42,9 @@ export default function DataProvider({ children }) {
     setAnimals(animals);
   }
 
-  return <DataContext.Provider value={stateAndSetters}>
-    {children}
-  </DataContext.Provider>;
+  return <DataContext.Provider value={stateAndSetters}>{children}</DataContext.Provider>;
 }
 
-export function useDataContext(){
+export function useDataContext() {
   return useContext(DataContext);
 }
