@@ -7,11 +7,17 @@ export default function AnimalsList({ animals }) {
   return (
     <div className="animals-list">
       {animals.map((animal) => (
-        <div className="animal-card" key={animal.id}>
-          <h3>{animal.name}</h3>
-          {animal.photos[0] && <img src={animal.photos[0].small} />}
-          <p>{animal.description}</p>
-        </div>
+        <>{animal.photos[0]?.full && (
+          <div className="animal-card" key={animal.id}>
+            <h3>{animal.name}</h3>
+            <img src={animal.photos[0].full} />
+            
+            <p>{animal.description}</p>
+          </div>
+        )}</>
+        
+
+        
       ))}
       Certified by: Julie N. (tm)
     </div>

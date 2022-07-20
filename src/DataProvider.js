@@ -28,7 +28,7 @@ export default function DataProvider({ children }) {
       const data = await fetchBearerToken();
       setToken(data.access_token);
       const { animals } = await fetchAllAnimals(data.access_token);
-      console.log(animals);
+      // console.log(animals);
       setAnimals(animals);
     };
     fetchData();
