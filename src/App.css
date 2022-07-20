@@ -142,6 +142,8 @@ ul {
   list-style-type: none;
   text-decoration: none;
   width: 100%;
+  margin: 0;
+  padding: 10px 15px;
 }
 
 .material-symbols-sharp {
@@ -191,6 +193,7 @@ ul {
 
 .animal-card span {
   padding: 0 6px;
+
 }
 
 .animal-card button {
