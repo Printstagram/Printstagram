@@ -9,7 +9,10 @@ export default function AnimalsList({ animals }) {
       {animals.map((animal) => (
         <div className="animal-card" key={animal.id}>
           <h3>{animal.name}</h3>
-          {animal.photos[0] && <img src={animal.photos[0].small} />}
+          {animal.photos[0] 
+            ? <img src={animal.photos[0].full} />
+            : <img src="../No-image-found.jpg" />
+          }
           <p>{animal.description}</p>
         </div>
       ))}
