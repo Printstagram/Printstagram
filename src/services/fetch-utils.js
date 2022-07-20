@@ -39,13 +39,24 @@ export async function fetchAllAnimals(token, type) {
 }
 
 
-// Supabase fetches
+// // Supabase fetches
 
-export async function createProfile(email) {
-  const { body } = await client.from('profiles')
-    .insert({ email });
+// export async function createProfile(email) {
+//   const { body } = await client.from('profiles')
+//     .insert({ email });
 
-  return body;
-}
+//   return body;
+// }
 
-export async function createLikedList
+// export async function createLikedList(liked) {
+//   const { body } = await client.from('liked_list')
+//     .insert(liked);
+
+//   return body;
+// }
+
+// export async function fetchLikedList(id) {
+//   if (id) {
+
+//   }
+// }
