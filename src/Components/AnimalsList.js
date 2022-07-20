@@ -14,8 +14,7 @@ export default function AnimalsList({ animals }) {
 
   if (!animals) return null;
   return (
-    <div className="animals-list">
-      
+    <div className="animals-list">      
       {animals.map((animal) => {
         const alreadyOnLikedList = likedList && likedList.find((likedList) =>
           likedList.id === animal.id);
@@ -25,9 +24,7 @@ export default function AnimalsList({ animals }) {
               key={animal.id + animal.url}>
               <h2>{animal.name}</h2>
               <img src={animal.photos[0].full} />
-            
-              <p><b>{animal.name}</b> {animal.description}</p>
-              <button className='material-symbols-outlined' onClick={() => 
+            <button className='material-symbols-outlined' onClick={() => 
                 alreadyOnLikedList
                   ? handleDeleteFromLikedList(alreadyOnLikedList.id)
                   : handleAddToLikedList({
@@ -40,17 +37,9 @@ export default function AnimalsList({ animals }) {
                     breed: animal.breed,
                   })
               }> favorite </button>
+              <p><b>{animal.name}</b> {animal.description}</p>
             </div>
             )}
-          </div>
-        
-//         <button>
-//               <span className="material-symbols-outlined">
-// favorite
-//               </span>
-//             </button>
-
-        
         );})
       }
       Certified by: Julie N. (tm)
