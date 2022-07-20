@@ -14,8 +14,7 @@ export default function AnimalsList({ animals }) {
 
   if (!animals) return null;
   return (
-    <div className="animals-list">
-      
+    <div className="animals-list">      
       {animals.map((animal) => {
         const alreadyOnLikedList = likedList && likedList.find((likedList) =>
           likedList.id === animal.id);
@@ -24,8 +23,7 @@ export default function AnimalsList({ animals }) {
             {animal.photos[0]?.full && (<div className="animal-card" 
               key={animal.id + animal.url}>
               <h2>{animal.name}</h2>
-              <img src={animal.photos[0].full} />
-            
+              <img src={animal.photos[0].full} />            
               <p><b>{animal.name}</b> {animal.description}</p>
               <button className='material-symbols-outlined' onClick={() => 
                 alreadyOnLikedList
@@ -42,15 +40,7 @@ export default function AnimalsList({ animals }) {
               }> favorite </button>
             </div>
             )}
-          </div>
-        
-//         <button>
-//               <span className="material-symbols-outlined">
-// favorite
-//               </span>
-//             </button>
-
-        
+          </div>        
         );})
       }
       Certified by: Julie N. (tm)
