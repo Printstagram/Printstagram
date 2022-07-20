@@ -1,0 +1,35 @@
+{
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#a559de",
+    "activityBar.activeBorder": "#6a4615",
+    "activityBar.background": "#a559de",
+    "activityBar.foreground": "#e7e7e7",
+    "activityBar.inactiveForeground": "#e7e7e799",
+    "activityBarBadge.background": "#6a4615",
+    "activityBarBadge.foreground": "#e7e7e7",
+    "editorGroup.border": "#a559de",
+    "panel.border": "#a559de",
+    "sash.hoverBorder": "#a559de",
+    "sideBar.border": "#a559de",
+    "statusBar.background": "#8e2ed6",
+    "statusBar.border": "#8e2ed6",
+    "statusBar.debuggingBackground": "#76d62e",
+    "statusBar.debuggingBorder": "#76d62e",
+    "statusBar.debuggingForeground": "#15202b",
+    "statusBar.foreground": "#e7e7e7",
+    "statusBarItem.hoverBackground": "#a559de",
+    "statusBarItem.remoteBackground": "#8e2ed6",
+    "statusBarItem.remoteForeground": "#e7e7e7",
+    "tab.activeBorder": "#a559de",
+    "titleBar.activeBackground": "#8e2ed6",
+    "titleBar.activeForeground": "#e7e7e7",
+    "titleBar.border": "#8e2ed6",
+    "titleBar.inactiveBackground": "#8e2ed699",
+    "titleBar.inactiveForeground": "#e7e7e799"
+  },
+  "peacock.color": "#8e2ed6",
+  "cSpell.words": [
+    "petfinder",
+    "Printstagram"
+  ]
+}

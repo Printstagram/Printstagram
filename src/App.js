@@ -31,22 +31,12 @@ function App() {
     <Router>
       <div>
         <header>
-          <nav>
-            {user &&
-              <ul>
-                <li>
-                  <Link to="/">Home</Link>
-                </li>
-                <li>
-                  <Link to="/about">About</Link>
-                </li>
-                <li>
-                  <Link to="/liked-animals">My Liked Animals</Link>
-                </li>
-                <button onClick={handleLogout}>logout</button>
-              </ul>
-            }
-          </nav>
+          {user &&
+            <>
+              <h1>Printstagram</h1>
+              <button onClick={handleLogout}>logout</button>
+            </>
+          }
         </header>
         
 
@@ -71,7 +61,7 @@ function App() {
             {
               !user
                 ? <Redirect to='/sign-in' />
-                : <AnimalsList />
+                : <SearchAnimalsList />
             }
           </Route>
           <Route exact path="/liked-animals">
@@ -93,19 +83,23 @@ function App() {
           </Route>
         </Switch>
         <footer>
-          <nav>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/about">About</Link>
-              </li>
-              <li>
-                <Link to="/liked-animals">My Liked Animals</Link>
-              </li>
-            </ul>
+          <nav role='navigation'>
+            {user &&
+              <>
+                <ul>
+                  <li>
+                    <Link to="/">Home</Link>
+                  </li>
+                  <li>
+                    <Link to="/about">About</Link>
+                  </li>
+                  <li>
+                    <Link to="/liked-animals">My Liked Animals</Link>
+                  </li>
+                </ul>
+              </>}
           </nav>
+            
         </footer>
       </div>
     </Router>

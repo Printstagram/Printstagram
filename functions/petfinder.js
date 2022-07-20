@@ -8,7 +8,7 @@ const headers = {
 };
 
 
-exports.handler = async (event,) => {
+exports.handler = async (event) => {
   try {
     //put supersweet endpoint here
     const response = await fetch(`https://api.petfinder.com/v2/animals?type=${event.queryStringParameters.type}`, {
