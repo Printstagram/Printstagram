@@ -3,6 +3,7 @@ import { client } from './client';
 //functions here
 export async function signUpUser(email, password) {
   const { user } = await client.auth.signUp({ email, password });
+  await createProfile(email);
 
   return user;
 }
@@ -39,24 +40,43 @@ export async function fetchAllAnimals(token, type) {
 }
 
 
-// // Supabase fetches
+// Supabase fetches
 
-// export async function createProfile(email) {
-//   const { body } = await client.from('profiles')
-//     .insert({ email });
+export async function createProfile(email) {
+  const { body } = await client.from('profiles')
+    .insert({ email });
 
-//   return body;
-// }
+  return body;
+}
 
-// export async function createLikedList(liked) {
-//   const { body } = await client.from('liked_list')
-//     .insert(liked);
+export async function addToLikedList(liked) {
+  const { body } = await client.from('liked_pets')
+    .insert(liked);
 
-//   return body;
-// }
+  return body;
+}
 
-// export async function fetchLikedList(id) {
-//   if (id) {
+export async function fetchLikedList(id) {
+  if (id) {
+    const { body } = await client.from('liked_pets')
+      .select('*')
+      .match({ profiles_user_id: id });
 
-//   }
-// }
+    return body;
+  } else {
+    const { body } = await client.from('liked_pets')
+      .select('*')
+      .match({ profiles_user_id: getUser().id });
+
+    return body;
+  }
+}
+
+export async function deleteFromLikedList(id) {
+  const { body } = await client.from('liked_pets')
+    .delete()
+    .match({ id })
+    .single();
+
+  return body;
+}
