@@ -24,7 +24,7 @@ export default function SearchAnimalsList() {
 
   async function handleGetAnimalsByType() {
     const { animals } = await fetchAllAnimals(token, typeQuery);
-    console.log('animals', animals);
+    // console.log('animals', animals);
     setAnimals(animals);
   }
 
