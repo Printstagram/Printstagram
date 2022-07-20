@@ -18,8 +18,8 @@ export default function SignUp() {
 
   return (
     <div className='auth-form'>
-      <h4>Create an account</h4>
-      <p>Enter an email and password for your account</p>
+      <h1>Printstagram</h1>
+      <h2>Sign up to see photos of your animal friends.</h2>
       <form onSubmit={handleSignUp}>
         <label>
           <input 
@@ -35,6 +35,7 @@ export default function SignUp() {
             onChange={(e) => setSignUpPassword(e.target.value)}/>
         </label>
         <button>Sign Up</button>
+        <p>Have an account? <a href='./sign-in'>Log in</a></p> {/*eslint-disable-line */}
       </form>
     </div>
   );

@@ -18,6 +18,8 @@ export default function SignIn() {
 
   return (
     <div className='auth-form'>
+      <h1>Printstagram</h1>
+      <button>About the Devs</button>
       <form onSubmit={handleSignIn}>
         <label>
           <input 
@@ -31,7 +33,7 @@ export default function SignIn() {
             type='password'
             onChange={(e) => setSignInPassword(e.target.value)}/>
         </label>
-        <button>Login</button>
+        <button>Log In</button>
         <p>Don't have an account? <a href='./sign-up'>Sign up</a></p> {/*eslint-disable-line */}
       </form>
     </div>
