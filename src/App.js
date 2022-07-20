@@ -25,6 +25,7 @@ function App() {
 
   async function handleLogout() {
     await logout();
+    
   }
 
   return (

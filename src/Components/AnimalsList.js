@@ -6,15 +6,19 @@ export default function AnimalsList({ animals }) {
   if (!animals) return null;
   return (
     <div className="animals-list">
+      
       {animals.map((animal) => (
-        <>{animal.photos[0]?.full && (
-          <div className="animal-card" key={animal.id}>
-            <h3>{animal.name}</h3>
+        <div key={animal.url + animal.descriptions}>
+          {animal.photos[0]?.full && (<div className="animal-card" 
+            key={animal.id + animal.url}>
+            <h2>{animal.name}</h2>
             <img src={animal.photos[0].full} />
             
-            <p>{animal.description}</p>
+            <p><b>{animal.name}</b> {animal.description}</p>
+            <button>Add to Liked</button>
           </div>
-        )}</>
+          )}
+        </div>
         
 
         

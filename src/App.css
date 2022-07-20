@@ -80,7 +80,7 @@ form p {
   margin-bottom: 30px;
 }
 
-h2 {
+.auth-form h2 {
   font-size: 17px;
   color: rgb(139, 139, 139);
   margin: 0 70px 10px;
@@ -111,7 +111,9 @@ footer {
   bottom: 0px;
   background-color: white;
   width: 100%;
-
+  left: 0;
+  right: 0;
+  /* top: 844px; */
 }
 
 nav {
@@ -126,5 +128,24 @@ ul {
   justify-content: space-between;
   list-style-type: none;
   text-decoration: none;
+  width: 100%;
+}
+
+/* Main */
+.animals-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow: scroll;
+}
+
+.animal-card {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.animal-card img {
   width: 100%;
 }
