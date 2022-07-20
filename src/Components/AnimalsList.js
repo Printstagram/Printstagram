@@ -11,11 +11,15 @@ export default function AnimalsList({ animals }) {
         <div key={animal.url + animal.descriptions}>
           {animal.photos[0]?.full && (<div className="animal-card" 
             key={animal.id + animal.url}>
-            <h2>{animal.name}</h2>
+            <h2><a>{animal.name}</a></h2>
             <img src={animal.photos[0].full} />
             
-            <p><b>{animal.name}</b> {animal.description}</p>
-            <button>Add to Liked</button>
+            <button>
+              <span className="material-symbols-outlined">
+favorite
+              </span>
+            </button>
+            <p><a>{animal.name}</a> {animal.description}</p>
           </div>
           )}
         </div>
