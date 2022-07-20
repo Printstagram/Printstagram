@@ -24,7 +24,6 @@ export default function AnimalsList({ animals }) {
               key={animal.id + animal.url}>
               <h2>{animal.name}</h2>
               <img src={animal.photos[0].full} />            
-              <p><b>{animal.name}</b> {animal.description}</p>
               <button className='material-symbols-outlined' onClick={() => 
                 alreadyOnLikedList
                   ? handleDeleteFromLikedList(alreadyOnLikedList.id)
@@ -38,9 +37,14 @@ export default function AnimalsList({ animals }) {
                     breed: animal.breed,
                   })
               }> favorite </button>
+              <p><b>{animal.name}</b> {animal.description}</p>
             </div>
             )}
-          </div>        
+          </div>
+        
+
+
+        
         );})
       }
       Certified by: Julie N. (tm)
