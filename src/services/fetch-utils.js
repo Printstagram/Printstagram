@@ -37,3 +37,26 @@ export async function fetchAllAnimals(token, type) {
   const data = await response.json();
   return data;
 }
+
+
+// // Supabase fetches
+
+// export async function createProfile(email) {
+//   const { body } = await client.from('profiles')
+//     .insert({ email });
+
+//   return body;
+// }
+
+// export async function createLikedList(liked) {
+//   const { body } = await client.from('liked_list')
+//     .insert(liked);
+
+//   return body;
+// }
+
+// export async function fetchLikedList(id) {
+//   if (id) {
+
+//   }
+// }

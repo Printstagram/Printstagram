@@ -25,6 +25,7 @@ function App() {
 
   async function handleLogout() {
     await logout();
+    
   }
 
   return (
@@ -88,13 +89,22 @@ function App() {
               <>
                 <ul>
                   <li>
-                    <Link to="/">Home</Link>
+                    <Link to="/"><span className="material-symbols-sharp">
+home
+                    </span>
+                    </Link>
                   </li>
                   <li>
-                    <Link to="/about">About</Link>
+                    <Link to="/about"><span className="material-symbols-sharp">
+engineering
+                    </span>
+                    </Link>
                   </li>
                   <li>
-                    <Link to="/liked-animals">My Liked Animals</Link>
+                    <Link to="/liked-animals"><span className="material-symbols-sharp">
+pets
+                    </span>
+                    </Link>
                   </li>
                 </ul>
               </>}
