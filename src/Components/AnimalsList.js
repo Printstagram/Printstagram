@@ -40,7 +40,7 @@ export default function AnimalsList({ animals }) {
               <p><b>{animal.name}</b> {animal.description}</p>
             </div>
             )}
-        );})
+        );)
       }
       Certified by: Julie N. (tm)
     </div>
