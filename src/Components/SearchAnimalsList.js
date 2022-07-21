@@ -8,14 +8,12 @@ export default function SearchAnimalsList() {
   //context
   const {
     animals,
-    // handleGetAnimalsByType,
     setAnimals,
     token,
   } = useDataContext();
 
   //local state
   const [typeQuery, setTypeQuery] = useState('dog');
-  // const [data, setData] = useState('');
 
   useEffect(() => {
     // console.log(typeQuery);
@@ -23,7 +21,6 @@ export default function SearchAnimalsList() {
     const fetchData = async () => {
       const result = await fetchAllAnimals(token, typeQuery);
       setAnimals(result.animals);
-      // console.log(result);
     };
     fetchData();
     if (token) fetchData();
