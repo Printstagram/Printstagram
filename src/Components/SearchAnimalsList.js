@@ -37,20 +37,26 @@ export default function SearchAnimalsList() {
   
 
   return (
-    <div>
+    <div className='search-form'>
       <form
         onSubmit={(e) => {
           e.preventDefault();
           handleGetAnimalsByType(typeQuery);
         }}
       >
+
+        <p>What kind of animal are you looking for?</p>
         <input
           value={typeQuery}
           type="text"
           placeholder="search"
           onChange={(e) => setTypeQuery(e.target.value)}
         />
-        <button>search</button>
+        <button className='search-btn'>
+          <span className="material-symbols-outlined">
+  search
+          </span>
+        </button>
       </form>
       <AnimalsList animals={animals} />
       <button className='prev-button' disabled={page <= 1} onClick={() => setPage(page - 1)}>Previous Page</button>

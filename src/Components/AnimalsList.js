@@ -20,12 +20,12 @@ export default function AnimalsList({ animals }) {
             {animal.photos[0]?.full && (
               <div className="animal-card" key={animal.id + animal.url}>
                 <h2>
-                  <Link to={`/animal-details/${animal.id}`} >{animal.name}</Link>
+                  <Link to={`/animal-details/${animal.id}`} ><img className="prof-pic-main" src={animal.photos[0].full} />{animal.name}</Link>
                 </h2>
-                <img src={animal.photos[0].full} />
+                <img className='main-img' src={animal.photos[0].full} />
 
                 <button
-                  className="material-symbols-outlined"
+                  className={`material-symbols-${alreadyOnLikedList ? 'sharp' : 'outlined'}`}
                   onClick={() =>
                     alreadyOnLikedList
                       ? handleDeleteFromLikedList(alreadyOnLikedList.id)

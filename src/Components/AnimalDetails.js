@@ -11,7 +11,7 @@ export default function AnimalDetails() {
 
   const { id } = useParams();
   
-  const [animalById, setAnimalById] = useState([]);
+  const [animalById, setAnimalById] = useState({ photos: [{}] });
   
   // console.log(animalById);
   // console.log(id);
@@ -28,9 +28,18 @@ export default function AnimalDetails() {
   }
 
   return (
-    <div>
-      <h2>{animalById.name}</h2>
-      AnimalDetails
+    <div className='animal-detail'>
+      <img className='prof-pic' src={animalById.photos[0].full} />
+      <h2>{animalById.name} <span>({animalById.age}/{animalById.type})</span></h2>
+      <ul>
+        {/* <li>{animalById.breeds[0]}</li> */}
+        <li>{animalById.description}</li>
+      </ul>
+      {
+        <div className='photos'><img src={animalById.photos[0].full} /><img src={animalById.photos[0].full} /><img src={animalById.photos[0].full} /><img src={animalById.photos[0].full} /><img src={animalById.photos[0].full} /><img src={animalById.photos[0].full} /><img src={animalById.photos[0].full} /><img src={animalById.photos[0].full} /></div>
+      }
+
+      {/* {JSON.stringify(animalById)} */}
     </div>
   );
 }
