@@ -8,6 +8,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
 
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+
 .App,
 #root,
 html,
@@ -53,14 +55,14 @@ button:hover {
   opacity: 0.7;
 }
 
-form {
+.auth-form form {
   display: flex;
   flex-direction: column;
   width: 65vw;
   align-items: center;
 }
 
-form input {
+.auth-form form input {
   width: 241px;
   border: 1px solid lightgray;
   border-radius: 2px;
@@ -68,18 +70,18 @@ form input {
   margin: 5px 0;
 }
 
-form button {
+.auth-form form button {
   width: 100%;
   margin-top: 35px;
   margin-bottom: 20px;
 }
 
-form a {
+.auth-form form a {
   color: #0095f6;
   font-weight: 600;
 }
 
-form p {
+.auth-form form p {
   font-size: 14px;
   color: gray;
 }
@@ -157,6 +159,18 @@ ul {
 }
 
 /* Main */
+
+.prof-pic-main {
+  width: 32px;
+  height: 32px;
+  padding: 2.5px;
+  background: rgb(245,195,59);
+  background: linear-gradient(0deg, rgba(245,195,59,1) 0%, rgba(245,59,194,1) 100%);
+  border-radius: 50%;
+  margin-left: 3px;
+  margin-right: 5px;
+}
+
 .animals-list {
   display: flex;
   flex-direction: column;
@@ -172,7 +186,7 @@ ul {
   text-transform: lowercase;
 }
 
-.animal-card img {
+.main-img {
   width: 100%;
 }
 
@@ -187,14 +201,18 @@ ul {
 .animal-card a {
   font-size: 14px;
   font-weight: 600;
+  display: flex;
+  align-items: center;
 }
 
 .animal-card h2 {
   padding: 0 16px;
+  display: flex;
+
 }
 
 .animal-card span {
-  padding: 0 6px;
+  padding: 0 10px;
 }
 
 .animal-card button {
@@ -203,6 +221,51 @@ ul {
   width: fit-content;
   padding-bottom: 0;
   padding-top: 10px;
+  padding-left: 10px;
+}
+
+h2 span {
+  color: gray;
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.search-btn {
+  background-color: white;
+  margin-top: 0;
+  width: fit-content;
+}
+
+.search-btn span {
+  color: gray;
+  font-weight: 700;
+}
+
+
+.search-form input {
+  display: flex;
+  flex-direction: row;
+  height: 20px;
+  width: 221px;
+  border: 1px solid lightgray;
+  border-radius: 2px;
+  padding: 9px 0 7px 8px;
+  margin: 0;
+}
+
+.search-btn:hover {
+  cursor: pointer;
+  opacity: .8;
+}
+
+form p {
+  width: 350px;
+  font-size: 14px;
+  color: gray;
+}
+
+.search-form form {
+  display: inline;
 }
 
 /* detail page */
@@ -239,11 +302,6 @@ ul {
   width: 300px;
 }
 
-h2 span {
-  color: gray;
-  font-weight: 400;
-  font-size: 12px;
-}
 
 
 
