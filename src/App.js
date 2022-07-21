@@ -20,12 +20,13 @@ import { logout } from './services/fetch-utils';
 function App() {
 
   const {
-    user, 
+    user,
+    setUser
   } = useDataContext();
 
   async function handleLogout() {
     await logout();
-    
+    setUser(null);
   }
 
   return (
@@ -87,6 +88,7 @@ function App() {
             }
           </Route>
           <Route exact path="/about">
+            
             <About />
           </Route>
           

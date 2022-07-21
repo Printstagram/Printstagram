@@ -14,19 +14,29 @@ export default function SearchAnimalsList() {
   } = useDataContext();
 
   //local state
-  const [typeQuery, setTypeQuery] = useState('cat');
+  const [typeQuery, setTypeQuery] = useState('dog');
+  // const [data, setData] = useState('');
 
   useEffect(() => {
     // console.log(typeQuery);
     // console.log(token);
-    if (token) fetchAllAnimals(token, typeQuery);
+    const fetchData = async () => {
+      const result = await fetchAllAnimals(token, typeQuery);
+      setAnimals(result.animals);
+      // console.log(result);
+    };
+    fetchData();
+    if (token) fetchData();
   }, [token]); //eslint-disable-line
 
   async function handleGetAnimalsByType() {
     const { animals } = await fetchAllAnimals(token, typeQuery);
     // console.log('animals', animals);
     setAnimals(animals);
+
   }
+
+  
 
   return (
     <div>

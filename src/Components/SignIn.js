@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDataContext } from '../DataProvider';
 import { signInUser } from '../services/fetch-utils';
+import { Link } from 'react-router-dom';
 
 export default function SignIn() {
 
@@ -19,7 +20,9 @@ export default function SignIn() {
   return (
     <div className='auth-form'>
       <h1>Printstagram</h1>
-      <button>About the Devs</button>
+      <Link to="/about">
+        <button>About the Devs</button>
+      </Link>
       <form onSubmit={handleSignIn}>
         <label>
           <input 
