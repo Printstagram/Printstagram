@@ -28,8 +28,7 @@ exports.handler = async () => {
       body: json
     };
   } catch (error) {
-    // eslint-disable-next-line no-console
-    console.log(error);
+    // console.log(error);
     return {
       statusCode: 500,
       body: JSON.stringify({ error: 'Failed fetching data' }),
