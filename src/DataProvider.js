@@ -20,6 +20,8 @@ export default function DataProvider({ children }) {
     handleAddToLikedList,
     handleDeleteFromLikedList,
     handleFetchFromLikedList,
+    // animalById,
+    // handleFetchAnimalById,
     //add more function stuff here
   };
 
@@ -55,6 +57,8 @@ export default function DataProvider({ children }) {
 
     setLikedList(likedList);
   }
+  
+
 
   return <DataContext.Provider value={stateAndSetters}>{children}</DataContext.Provider>;
 }

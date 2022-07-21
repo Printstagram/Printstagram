@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDataContext } from '../DataProvider';
+import { Link } from 'react-router-dom';
 
 export default function AnimalsList({ animals }) {
   const { handleAddToLikedList, handleDeleteFromLikedList, handleFetchFromLikedList, likedList } =
@@ -18,7 +19,9 @@ export default function AnimalsList({ animals }) {
           <div key={animal.id}>
             {animal.photos[0]?.full && (
               <div className="animal-card" key={animal.id + animal.url}>
-                <h2>{animal.name}</h2>
+                <h2>
+                  <Link to={`/animal-details/${animal.id}`} >{animal.name}</Link>
+                </h2>
                 <img src={animal.photos[0].full} />
 
                 <button
@@ -33,7 +36,7 @@ export default function AnimalsList({ animals }) {
                         type: animal.type,
                         description: animal.description,
                         age: animal.age,
-                        breed: animal.breed,
+                        breeds: animal.breeds,
                       })
                   }
                 >
@@ -41,7 +44,7 @@ export default function AnimalsList({ animals }) {
                   favorite
                 </button>
                 <p>
-                  <b>{animal.name}</b> {animal.description}
+                  <Link to={`/animal-details/${animal.id}`} >{animal.name}</Link> {animal.description}
                 </p>
               </div>
             )}

@@ -80,3 +80,20 @@ export async function deleteFromLikedList(id) {
 
   return body;
 }
+
+export async function fetchAnimalById(token, id) {
+  const response = await fetch(`/.netlify/functions/single-pet?token=${token}&id=${id}`);
+  const data = await response.json();
+  return data;
+}
+
+//example
+
+// export async function getMovieById(id) {
+//   console.log(id);
+//   const raw = await fetch(`/.netlify/functions/single-movie?id=${id}`);
+//   const results = await raw.json();
+  
+//   return results;
+// }
+
