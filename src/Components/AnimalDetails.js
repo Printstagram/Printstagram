@@ -13,8 +13,8 @@ export default function AnimalDetails() {
   
   const [animalById, setAnimalById] = useState([]);
   
-  console.log(animalById);
-  console.log(id);
+  // console.log(animalById);
+  // console.log(id);
   // console.log(token);
   
   useEffect(() => {

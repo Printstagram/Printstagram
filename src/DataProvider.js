@@ -1,5 +1,5 @@
 import { useState, createContext, useContext, useEffect } from 'react';
-import { getUser, fetchBearerToken, fetchAllAnimals, addToLikedList, fetchLikedList, deleteFromLikedList, fetchAnimalById } from './services/fetch-utils';
+import { getUser, fetchBearerToken, fetchAllAnimals, addToLikedList, fetchLikedList, deleteFromLikedList } from './services/fetch-utils';
 const DataContext = createContext();
 
 export default function DataProvider({ children }) {
