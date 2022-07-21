@@ -14,12 +14,13 @@ export default function SearchAnimalsList() {
 
   //local state
   const [typeQuery, setTypeQuery] = useState('dog');
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
     // console.log(typeQuery);
     // console.log(token);
     const fetchData = async () => {
-      const result = await fetchAllAnimals(token, typeQuery);
+      const result = await fetchAllAnimals(token, typeQuery, page);
       setAnimals(result.animals);
     };
     fetchData();
@@ -27,7 +28,7 @@ export default function SearchAnimalsList() {
   }, [token]); //eslint-disable-line
 
   async function handleGetAnimalsByType() {
-    const { animals } = await fetchAllAnimals(token, typeQuery);
+    const { animals } = await fetchAllAnimals(token, typeQuery, page);
     // console.log('animals', animals);
     setAnimals(animals);
 
@@ -52,6 +53,9 @@ export default function SearchAnimalsList() {
         <button>search</button>
       </form>
       <AnimalsList animals={animals} />
+      <button className='prev-button' disabled={page <= 1} onClick={() => setPage(page - 1)}>Previous Page</button>
+      <p>{page}</p>
+      <button className='next-button' onClick={() => setPage(page + 1)} >Next Page</button>
     </div>
   );
 }

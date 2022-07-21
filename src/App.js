@@ -91,7 +91,6 @@ function App() {
             
             <About />
           </Route>
-          
         </Switch>
         <footer>
           <nav role='navigation'>
