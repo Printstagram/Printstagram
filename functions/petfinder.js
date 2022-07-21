@@ -11,7 +11,7 @@ const headers = {
 exports.handler = async (event) => {
   try {
     //put supersweet endpoint here
-    const response = await fetch(`https://api.petfinder.com/v2/animals?type=${event.queryStringParameters.type}`, {
+    const response = await fetch(`https://api.petfinder.com/v2/animals?type=${event.queryStringParameters.type}&page=${event.queryStringParameters.page}`, {
       headers: {
         Authorization: `Bearer ${event.queryStringParameters.token}`,
       }
