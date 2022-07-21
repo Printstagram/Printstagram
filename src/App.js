@@ -9,7 +9,7 @@ import { useDataContext } from './DataProvider';
 
 import './App.css';
 import About from './Components/About';
-// import AnimalDetails from './Components/AnimalDetails';
+import AnimalDetails from './Components/AnimalDetails';
 // import AnimalsList from './Components/AnimalsList';
 import LikedList from './Components/LikedList';
 import SearchAnimalsList from './Components/SearchAnimalsList';
@@ -79,9 +79,17 @@ function App() {
                 : <SearchAnimalsList />
             }
           </Route>
+          <Route exact path="/animal-details/:id">
+            {
+              !user
+                ? <Redirect to='/sign-in' />
+                : <AnimalDetails />
+            }
+          </Route>
           <Route exact path="/about">
             <About />
           </Route>
+          
         </Switch>
         <footer>
           <nav role='navigation'>

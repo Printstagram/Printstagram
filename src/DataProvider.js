@@ -1,5 +1,5 @@
 import { useState, createContext, useContext, useEffect } from 'react';
-import { getUser, fetchBearerToken, fetchAllAnimals, addToLikedList, fetchLikedList, deleteFromLikedList } from './services/fetch-utils';
+import { getUser, fetchBearerToken, fetchAllAnimals, addToLikedList, fetchLikedList, deleteFromLikedList, fetchAnimalById } from './services/fetch-utils';
 const DataContext = createContext();
 
 export default function DataProvider({ children }) {
@@ -20,6 +20,8 @@ export default function DataProvider({ children }) {
     handleAddToLikedList,
     handleDeleteFromLikedList,
     handleFetchFromLikedList,
+    // animalById,
+    // handleFetchAnimalById,
     //add more function stuff here
   };
 
@@ -55,6 +57,8 @@ export default function DataProvider({ children }) {
 
     setLikedList(likedList);
   }
+  
+
 
   return <DataContext.Provider value={stateAndSetters}>{children}</DataContext.Provider>;
 }
