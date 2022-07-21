@@ -51,7 +51,7 @@ export async function createProfile(email) {
 
 export async function addToLikedList(liked) {
   const { body } = await client.from('liked_pets')
-    .insert(liked);
+    .insert([{ ...liked }]);
 
   return body;
 }
