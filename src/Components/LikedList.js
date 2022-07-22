@@ -13,7 +13,6 @@ export default function LikedList() {
 
   return (
     <div className="animals-list">
-      <p>send help  asap</p>
       {
         <AnimalsList animals={likedList} />
       }

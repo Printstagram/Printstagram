@@ -42,10 +42,9 @@ export default function SearchAnimalsList() {
         onSubmit={(e) => {
           e.preventDefault();
           handleGetAnimalsByType(typeQuery);
-        }}
-      >
-
+        }}>
         <p>What kind of animal are you looking for?</p>
+
         <input
           value={typeQuery}
           type="text"

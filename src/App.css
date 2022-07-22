@@ -302,6 +302,25 @@ form p {
   width: 300px;
 }
 
+/* About Page */
+.about-devs {
+  display: flex;
+  flex-direction: column;
+}
 
+.member { 
 
+}
 
+.member img {
+  width: 100%;
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+}
+
+.icons img {
+  width: 50px;
+}
