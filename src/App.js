@@ -36,7 +36,9 @@ function App() {
           {user &&
             <>
               <h1>Printstagram</h1>
-              <button onClick={handleLogout}>logout</button>
+              <button onClick={handleLogout}><span className="material-symbols-outlined">
+    logout
+              </span></button>
             </>
           }
         </header>
@@ -105,7 +107,7 @@ home
                   </li>
                   <li>
                     <Link to="/about"><span className="material-symbols-sharp">
-engineering
+groups
                     </span>
                     </Link>
                   </li>

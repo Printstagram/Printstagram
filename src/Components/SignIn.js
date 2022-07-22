@@ -21,7 +21,9 @@ export default function SignIn() {
     <div className='auth-form'>
       <h1>Printstagram</h1>
       <Link to="/about">
-        <button>About the Devs</button>
+        <button className='about-devs'>About the Devs<span className="material-symbols-sharp">
+groups
+        </span></button>
       </Link>
       <form onSubmit={handleSignIn}>
         <label>
@@ -38,7 +40,7 @@ export default function SignIn() {
         </label>
         <button>Log In</button>
         <p>Don't have an account? <a href='./sign-up'>Sign up</a></p> {/*eslint-disable-line */}
-        <p>Powered by Petfinder API</p>
+        <p className='powered-by'>Powered by Petfinder API</p>
       </form>
     </div>
   );
