@@ -7,3 +7,6 @@
 | Kashi Tamang                  | [Github](https://github.com/kashitamang)          | [LinkedIn](https://www.linkedin.com/in/kashitamang/)          |
 | Brien Thomas                  | [Github](https://github.com/briensthomas)         | [LinkedIn](https://www.linkedin.com/in/brien-thomas/)         |
 | Kat Zaro                      | [Github](https://github.com/kathrynzaro)          | [LinkedIn](https://www.linkedin.com/in/katzaro/)              |
+
+## Planning/Wireframes
+[Miro Board](https://miro.com/app/board/uXjVOtPULdo=/?share_link_id=600908375589)
