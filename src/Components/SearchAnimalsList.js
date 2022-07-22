@@ -38,29 +38,34 @@ export default function SearchAnimalsList() {
 
   return (
     <div className='search-form'>
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          handleGetAnimalsByType(typeQuery);
-        }}>
+      <div className='search-div'>
         <p>What kind of animal are you looking for?</p>
-
-        <input
-          value={typeQuery}
-          type="text"
-          placeholder="search"
-          onChange={(e) => setTypeQuery(e.target.value)}
-        />
-        <button className='search-btn'>
-          <span className="material-symbols-outlined">
-  search
-          </span>
-        </button>
-      </form>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            handleGetAnimalsByType(typeQuery);
+          }}>
+  
+          <input
+            value={typeQuery}
+            type="text"
+            placeholder="search"
+            onChange={(e) => setTypeQuery(e.target.value)}
+          />
+          <button className='search-btn'>
+            <span className="material-symbols-outlined">
+    search
+            </span>
+          </button>
+        </form>
+      </div>
       <AnimalsList animals={animals} />
-      <button className='prev-button' disabled={page <= 1} onClick={() => setPage(page - 1)}>Previous Page</button>
-      <p>{page}</p>
-      <button className='next-button' onClick={() => setPage(page + 1)} >Next Page</button>
+      <button className='prev-button' disabled={page <= 1} onClick={() => setPage(page - 1)}><span className="material-symbols-sharp">
+arrow_back
+      </span></button>
+      <button className='next-button' onClick={() => setPage(page + 1)} ><span className="material-symbols-sharp">
+arrow_forward
+      </span></button>
     </div>
   );
 }
