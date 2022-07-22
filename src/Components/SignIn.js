@@ -38,7 +38,7 @@ export default function SignIn() {
         </label>
         <button>Log In</button>
         <p>Don't have an account? <a href='./sign-up'>Sign up</a></p> {/*eslint-disable-line */}
-        
+        <p>Powered by Petfinder API</p>
       </form>
     </div>
   );
