@@ -351,10 +351,33 @@ h2 span {
 .about-devs {
   display: flex;
   flex-direction: column;
+ 
 }
 
-.member { 
+.team {
+   margin-bottom: 80px;
+}
 
+.member h2 { 
+  text-transform: lowercase;
+  font-size: 14px;
+  margin-left: 15px;
+  margin-bottom: 7px;
+  margin-top: 25px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.member .prof-pic-main {
+  width: 32px;
+  height: 32px;
+  padding: 2.5px;
+  background: rgb(245,195,59);
+  background: linear-gradient(0deg, rgba(245,195,59,1) 0%, rgba(245,59,194,1) 100%);
+  border-radius: 50%;
+  margin-left: 0;
+  margin-right: 7px;
 }
 
 .member img {
@@ -367,5 +390,21 @@ h2 span {
 }
 
 .icons img {
-  width: 50px;
+  width: 30px;
+  margin-left: 13px;
+}
+
+.member p {
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
+  padding: 0 16px;
+  margin-top: 0;
+  color: gray;
+}
+
+.member span {
+  font-weight: 600;
+  text-transform: lowercase;
+  color: black;
 }
