@@ -7,7 +7,7 @@ import { fetchAnimalById } from '../services/fetch-utils';
 export default function AnimalDetails() {
   const { 
     token, 
-    likedList,
+    // likedList,
     // handleDeleteFromLikedList,
     // handleAddToLikedList,
   } = useDataContext();
