@@ -8,8 +8,8 @@ export default function AnimalDetails() {
   const { 
     token, 
     likedList,
-    handleDeleteFromLikedList,
-    handleAddToLikedList,
+    // handleDeleteFromLikedList,
+    // handleAddToLikedList,
   } = useDataContext();
 
   const { id } = useParams();
@@ -30,8 +30,8 @@ export default function AnimalDetails() {
     setAnimalById(animalDetailById.animal);
   }
 
-  const alreadyOnLikedList =
-  likedList && likedList.find((likedList) => likedList.id === animalById.id);
+  // const alreadyOnLikedList =
+  // likedList && likedList.find((likedList) => likedList.id === animalById.id);
   return (
     <div className='animal-detail'>
       <div>
@@ -57,7 +57,6 @@ export default function AnimalDetails() {
         <ul>
           <li>{animalById.description}</li>
         </ul>
-         
       </div>
       <div className='photos'>
         <img src={animalById.photos[0].full} />
