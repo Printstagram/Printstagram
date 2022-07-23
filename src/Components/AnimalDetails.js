@@ -36,7 +36,7 @@ export default function AnimalDetails() {
     <div className='animal-detail'>
       <div>
         <img className='prof-pic' src={animalById.photos[0].full} />
-        <button
+        {/* <button
           className={`material-symbols-${alreadyOnLikedList ? 'sharp' : 'outlined'}`}
           onClick={() =>
             alreadyOnLikedList
@@ -52,7 +52,7 @@ export default function AnimalDetails() {
           }
         >
                   favorite
-        </button>
+        </button> */}
         <h2>{animalById.name} <span>({animalById.age}/{animalById.type})</span></h2>
         <ul>
           <li>{animalById.description}</li>
