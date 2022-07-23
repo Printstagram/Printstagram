@@ -14,7 +14,7 @@ export default function SearchAnimalsList() {
 
   //local state
   const [typeQuery, setTypeQuery] = useState('dog');
-  const [page, setPage] = useState(1);
+  const [page] = useState(1);
 
   useEffect(() => {
     // console.log(typeQuery);
