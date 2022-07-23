@@ -7,9 +7,9 @@ import { fetchAnimalById } from '../services/fetch-utils';
 export default function AnimalDetails() {
   const { 
     token, 
-    likedList,
-    handleDeleteFromLikedList,
-    handleAddToLikedList,
+    // likedList,
+    // handleDeleteFromLikedList,
+    // handleAddToLikedList,
   } = useDataContext();
 
   const { id } = useParams();
@@ -30,13 +30,13 @@ export default function AnimalDetails() {
     setAnimalById(animalDetailById.animal);
   }
 
-  const alreadyOnLikedList =
-  likedList && likedList.find((likedList) => likedList.id === animalById.id);
+  // const alreadyOnLikedList =
+  // likedList && likedList.find((likedList) => likedList.id === animalById.id);
   return (
     <div className='animal-detail'>
       <div>
         <img className='prof-pic' src={animalById.photos[0].full} />
-        <button
+        {/* <button
           className={`material-symbols-${alreadyOnLikedList ? 'sharp' : 'outlined'}`}
           onClick={() =>
             alreadyOnLikedList
@@ -52,12 +52,11 @@ export default function AnimalDetails() {
           }
         >
                   favorite
-        </button>
+        </button> */}
         <h2>{animalById.name} <span>({animalById.age}/{animalById.type})</span></h2>
         <ul>
           <li>{animalById.description}</li>
         </ul>
-         
       </div>
       <div className='photos'>
         <img src={animalById.photos[0].full} />

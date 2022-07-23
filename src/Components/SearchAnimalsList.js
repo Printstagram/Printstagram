@@ -14,7 +14,7 @@ export default function SearchAnimalsList() {
 
   //local state
   const [typeQuery, setTypeQuery] = useState('dog');
-  const [page, setPage] = useState(1);
+  const [page] = useState(1);
 
   useEffect(() => {
     // console.log(typeQuery);
@@ -60,12 +60,12 @@ export default function SearchAnimalsList() {
         </form>
       </div>
       <AnimalsList animals={animals} />
-      <button className='prev-button' disabled={page <= 1} onClick={() => setPage(page - 1)}><span className="material-symbols-sharp">
+      {/* <button className='prev-button' disabled={page <= 1} onClick={() => setPage(page - 1)}><span className="material-symbols-sharp">
 arrow_back
       </span></button>
       <button className='next-button' onClick={() => setPage(page + 1)} ><span className="material-symbols-sharp">
 arrow_forward
-      </span></button>
+      </span></button> */}
     </div>
   );
 }
