@@ -3,7 +3,7 @@ import { useDataContext } from '../DataProvider';
 import { Link } from 'react-router-dom';
 
 export default function AnimalsList({ animals }) {
-  const { handleAddToLikedList, handleDeleteFromLikedList, handleFetchFromLikedList, likedList } =
+  const { handleAddToLikedList, handleDeleteFromLikedList, handleFetchFromLikedList, likedList, isAlreadyLiked } =
     useDataContext();
 
   useEffect(() => {
@@ -13,8 +13,7 @@ export default function AnimalsList({ animals }) {
   return (
     <div className="animals-list">
       {animals && animals.map((animal) => {
-        const alreadyOnLikedList =
-          likedList && likedList.find((likedList) => likedList.id === animal.id);
+        const alreadyOnLikedList = isAlreadyLiked(animal);
         return (
           <div key={animal.id}>
             {animal.photos[0]?.full && (
@@ -28,18 +27,13 @@ export default function AnimalsList({ animals }) {
                   className={`material-symbols-${alreadyOnLikedList ? 'sharp' : 'outlined'}`}
                   onClick={() =>
                     alreadyOnLikedList
+                    // nice ternary!
                       ? handleDeleteFromLikedList(alreadyOnLikedList.id)
-                      : handleAddToLikedList({
-                        id: animal.id,
-                        name: animal.name,
-                        photos: [animal.photos[0]],
-                        type: animal.type,
-                        description: animal.description,
-                        age: animal.age,
-                        breeds: animal.breeds,
-                      })
-                  }
+                      // if all the property names are the same, it seems like you could just pass in the animal?
+                      : handleAddToLikedList(animal)
+                    }
                 >
+                  {/* i'd like to see whatever you're fixing with this {' '} solved in another way */}
                   {' '}
                   favorite
                 </button>

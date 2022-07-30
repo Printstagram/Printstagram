@@ -9,16 +9,13 @@ export default function AnimalDetails() {
     token, 
     likedList,
     handleDeleteFromLikedList,
-    handleAddToLikedList,
+    handleAddToLikedList, 
+    isAlreadyLiked
   } = useDataContext();
 
   const { id } = useParams();
   
   const [animalById, setAnimalById] = useState({ photos: [{}] });
-  
-  // console.log(animalById);
-  // console.log(id);
-  // console.log(token);
   
   useEffect(() => {
     if (token) handleFetchAnimalById(token, id);
@@ -30,8 +27,7 @@ export default function AnimalDetails() {
     setAnimalById(animalDetailById.animal);
   }
 
-  const alreadyOnLikedList =
-  likedList && likedList.find((likedList) => likedList.id === animalById.id);
+  const alreadyOnLikedList = isAlreadyLiked(animal);
   return (
     <div className='animal-detail'>
       <div>
@@ -41,14 +37,8 @@ export default function AnimalDetails() {
           onClick={() =>
             alreadyOnLikedList
               ? handleDeleteFromLikedList(alreadyOnLikedList.id)
-              : handleAddToLikedList({
-                name: animalById.name,
-                photos: [animalById.photos[0]],
-                type: animalById.type,
-                description: animalById.description,
-                age: animalById.age,
-                breeds: animalById.breeds,
-              })
+              // seems like this is just a recreation of the animal object
+              : handleAddToLikedList(animalById)
           }
         >
                   favorite
@@ -60,6 +50,7 @@ export default function AnimalDetails() {
          
       </div>
       <div className='photos'>
+        {/* might be nice to have some fake backups here for the demo */}
         <img src={animalById.photos[0].full} />
         <img src={animalById.photos[0].full} />
         <img src={animalById.photos[0].full} />

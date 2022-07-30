@@ -24,6 +24,7 @@ export function getUser() {
 }
 
 // Netlify fetches
+// so cool!
 export async function fetchBearerToken() {
   const response = await fetch('/.netlify/functions/token');
 
@@ -51,7 +52,7 @@ export async function createProfile(email) {
 
 export async function addToLikedList(liked) {
   const { body } = await client.from('liked_pets')
-    .insert([{ ...liked }]);
+    .insert([liked]); // works without the spread, and you could/should probably remove the array brackets, but i'll require fixes throughout your app
 
   return body;
 }

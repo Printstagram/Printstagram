@@ -9,6 +9,11 @@ export default function DataProvider({ children }) {
   const [likedList, setLikedList] = useState(null);
   const [token, setToken] = useState('');
 
+  // seems like this could live in the Provider to be used throughout
+  function isAlreadyLiked(animal) {
+    return likedList && likedList.find((likedList) => likedList.id === animal.id)
+  }
+
 
   //add url state here?
 
@@ -20,6 +25,7 @@ export default function DataProvider({ children }) {
     handleAddToLikedList,
     handleDeleteFromLikedList,
     handleFetchFromLikedList,
+    isAlreadyLiked
     // animalById,
     // handleFetchAnimalById,
     //add more function stuff here

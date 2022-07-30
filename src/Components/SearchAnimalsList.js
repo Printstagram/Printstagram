@@ -32,9 +32,7 @@ export default function SearchAnimalsList() {
     // console.log('animals', animals);
     setAnimals(animals);
 
-  }
-
-  
+  }  
 
   return (
     <div className='search-form'>
@@ -60,12 +58,22 @@ export default function SearchAnimalsList() {
         </form>
       </div>
       <AnimalsList animals={animals} />
-      <button className='prev-button' disabled={page <= 1} onClick={() => setPage(page - 1)}><span className="material-symbols-sharp">
-arrow_back
-      </span></button>
-      <button className='next-button' onClick={() => setPage(page + 1)} ><span className="material-symbols-sharp">
-arrow_forward
-      </span></button>
+      {/* nice paginatin'! */}
+      <button 
+        className='prev-button' 
+        disabled={page <= 1} 
+        onClick={() => setPage(page - 1)}>
+          <span className="material-symbols-sharp">
+            arrow_back
+          </span>
+      </button>
+      <button 
+        className='next-button'
+        onClick={() => setPage(page + 1)} >
+          <span className="material-symbols-sharp">
+            arrow_forward
+          </span>
+      </button>
     </div>
   );
 }

@@ -35,7 +35,10 @@ export default function SignUp() {
             onChange={(e) => setSignUpPassword(e.target.value)}/>
         </label>
         <button>Sign Up</button>
-        <p>Have an account? <a href='./sign-in'>Log in</a></p> {/*eslint-disable-line */}
+        <p>Have an account? 
+          {/* use react router links to keep everything living in react state */}
+          <Link to="sign-in">Log in</Link>  
+          </p> {/*eslint-disable-line so curious what eslint was mad about here! */}
       </form>
     </div>
   );
